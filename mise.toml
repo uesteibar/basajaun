@@ -1,0 +1,4 @@
+# Tools for developing basajaun. `just setup` runs `mise install`.
+[tools]
+rust = { version = "stable", components = "rustfmt,clippy" }
+just = "latest"

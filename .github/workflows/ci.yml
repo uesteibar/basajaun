@@ -1,0 +1,19 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      # Actions are pinned to commit SHAs; the comment is the tag they were taken from.
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0 (v4)
+      # Installs the tools listed in mise.toml (Rust with rustfmt and clippy, just). Rust follows
+      # the `stable` channel and just follows `latest`, so those are tracked, not pinned.
+      - uses: jdx/mise-action@c37c93293d6b742fc901e1406b8f764f6fb19dac # v2.4.4 (v2)
+      - run: just check

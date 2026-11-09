@@ -1,0 +1,17 @@
+[package]
+name = "bsjn"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "HTTPS URLs for dev servers on your tailnet (personal project, use at your own risk)"
+
+[dependencies]
+anyhow = "1.0.104"
+clap = { version = "4.6.7", features = ["derive"] }
+libc = "0.2.191"
+rpassword = "7.5.4"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+tempfile = "3.27.0"
+toml = "1.2.1"
+ureq = { version = "3.5.1", features = ["json"] }
